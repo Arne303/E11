@@ -76,3 +76,4 @@ while i<30:
     """
 
 file.close()
+print("Data collection complete!")
