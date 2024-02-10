@@ -29,7 +29,7 @@ bme680.sea_level_pressure = 1013.25
 
 print("Found sensors, reading data...")
 
-meta_data = ["Time","PM2.5","PM10",'Time','Temperature','Gas','Humidity','Pressure','Altitude']
+meta_data = ["Time","PM2.5","PM10",'Temperature','Gas','Humidity','Pressure','Altitude']
 
 file = open("combined_data.csv","w",newline='')
 
@@ -54,7 +54,7 @@ while i<30:
         "PM 1.0: %d\tPM2.5: %d\tPM10: %d"
         % (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"])
     )
-    print("Time: ", time.time)
+    print("Count: ", i)
 
     now = time.time()
     data_out = [now, aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
