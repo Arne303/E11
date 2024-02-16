@@ -61,7 +61,7 @@ while (now-start_time) < run_time:
         "PM 1.0: %d\tPM2.5: %d\tPM10: %d"
         % (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"])
     )
-    print("Count: ", i)
+    print("Count: ")
 
     now = time.time()
     data_out = [now, aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
