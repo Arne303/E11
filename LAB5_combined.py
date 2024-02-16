@@ -43,6 +43,8 @@ writer = csv.writer(file)
 meta_data = ["Time","PM2.5","PM10",'Temperature','Gas','Humidity','Pressure','Altitude']
 writer.writerow(meta_data)
 
+data_out = [bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
+
 now = time.time()
 while (now-start_time) < run_time:
     time.sleep(1)
@@ -67,7 +69,7 @@ while (now-start_time) < run_time:
         
     now = time.time()
     print(now)
-    
+
     data_out = [now, aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
     writer.writerow(data_out)
 
