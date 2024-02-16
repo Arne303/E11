@@ -54,6 +54,7 @@ while (now-start_time) < run_time:
         print("Unable to read from sensor, retrying...")
         continue
 
+    '''
     print()
     print("Concentration Units (standard)")
     print("---------------------------------------")
@@ -62,8 +63,11 @@ while (now-start_time) < run_time:
         % (aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"])
     )
     print("Count: ")
-
+    '''
+        
     now = time.time()
+    print(now)
+    
     data_out = [now, aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
     writer.writerow(data_out)
 
