@@ -45,7 +45,7 @@ writer.writerow(meta_data)
 
 data_out = [bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
 
-time.sleep(30)
+time.sleep(120)
 start_time = time.time()
 
 now = time.time()
