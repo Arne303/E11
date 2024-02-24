@@ -29,7 +29,7 @@ bme680.sea_level_pressure = 1013.25
 
 print(sys.argv) # arguments that were given when starting "python daq_test_week5.py arguments"; first [0] is the program name
 
-start_time = time.time()+120
+start_time = time.time()
 run_time = 10
 run_time = int(sys.argv[1]) # using first input argument
 
@@ -44,6 +44,8 @@ meta_data = ["Time","PM2.5","PM10",'Temperature','Gas','Humidity','Pressure','Al
 writer.writerow(meta_data)
 
 data_out = [bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
+
+time.sleep(120)
 
 now = time.time()
 while (now-start_time) < run_time:
