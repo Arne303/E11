@@ -29,7 +29,7 @@ bme680.sea_level_pressure = 1013.25
 
 print(sys.argv) # arguments that were given when starting "python daq_test_week5.py arguments"; first [0] is the program name
 
-start_time = time.time()
+start_time = time.time()+120
 run_time = 10
 run_time = int(sys.argv[1]) # using first input argument
 
