@@ -11,8 +11,6 @@ try:
     GPIO.setup(16, GPIO.IN)
     GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback)
  
-    message = raw_input('\nPress any key to exit.\n')
- 
 finally:
     GPIO.cleanup()
 
