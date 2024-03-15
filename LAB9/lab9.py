@@ -25,5 +25,6 @@ GPIO.setup(channel, GPIO.IN)
 GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback)
 
 while True:
+    count = 0
     time.sleep(10)
     print("Collected", count, "counts.")
