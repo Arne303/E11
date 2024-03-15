@@ -6,6 +6,7 @@ count = 0
 
 def my_callback(channel):
     print(time.time())
+    global count
     count = count + 1
     print(count)
 
