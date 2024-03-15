@@ -1,10 +1,12 @@
 import RPi.GPIO as GPIO
-import datetime
-
-def my_callback(channel):
-    print()
+import time
 
 channel = 16
+count = 0
+
+def my_callback(channel):
+    print(time.time())
+    count = count + 1
 
 try:
     GPIO.setmode(GPIO.BCM)
@@ -15,4 +17,4 @@ finally:
     GPIO.cleanup()
 
 while True:
-    datetime.sleep(1)
+    time.sleep(1)
