@@ -10,19 +10,9 @@ def my_callback(channel):
     count = count + 1
     print(count)
 
-"""
-try:
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(16, GPIO.IN)
-    GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback)
- 
-finally:
-    GPIO.cleanup()
-"""
-
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
-GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback)
+GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback, pull_up_down=GPIO.PUD_UP)
 
 while True:
     count = 0
