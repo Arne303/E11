@@ -5,8 +5,9 @@ channel = 16
 count = 0
 
 def my_callback(channel):
-    print(time.time())
+    #print(time.time())
     count = count + 1
+    print(count)
 
 try:
     GPIO.setmode(GPIO.BCM)
