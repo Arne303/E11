@@ -11,8 +11,8 @@ def my_callback(channel):
     print(count)
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(channel, GPIO.IN)
-GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(channel, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.add_event_detect(channel, GPIO.FALLING, callback=my_callback)
 
 while True:
     count = 0
