@@ -37,7 +37,10 @@ start_time = time.time()
 now = time.time()
 while (now-start_time) < run_time:
     count = 0
-    time.sleep(sys.argv[2])
+    
+    looptime = 10
+    looptime = int(sys.argv[2])
+    time.sleep(looptime)
 
     now = time.time()
     print(now, "-", "Collected", count, "counts.")
