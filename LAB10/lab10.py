@@ -44,6 +44,7 @@ while (now-start_time) < run_time:
 
     now = time.time()
     print(now, "-", "Collected", count, "counts.")
+    print( )
     data_out = [now, count]
 
     writer.writerow(data_out)
