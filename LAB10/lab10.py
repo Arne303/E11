@@ -3,7 +3,7 @@ import time
 import sys
 import csv
 
-channel = 16
+channel = 17
 count = 0
 
 def my_callback(channel):
