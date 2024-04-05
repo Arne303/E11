@@ -62,6 +62,8 @@ print("--- Measurement starting ---")
 meta_data = ["Time","Counts","PM2.5","PM10",'Temperature','Gas','Humidity','Pressure','Altitude']
 writer.writerow(meta_data)
 
+data_out = [bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
+
 start_time = time.time()
 
 now = time.time()
