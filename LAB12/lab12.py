@@ -68,26 +68,22 @@ start_time = time.time()
 
 now = time.time()
 while (now-start_time) < run_time:
-    
-    """
+    time.sleep(looptime)
     try:
         aqdata = pm25.read()
+        now = time.time()
+        print(now, "-", "Collected", count, "counts.")
+        print( )
+        data_out = [now, count, aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
+
+        writer.writerow(data_out)
         # print(aqdata)
+    
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
-    """
-    aqdata = pm25.read()
-
-    count = 0
-    time.sleep(looptime)
-
-    now = time.time()
-    print(now, "-", "Collected", count, "counts.")
-    print( )
-    data_out = [now, count, aqdata["pm25 standard"], aqdata["pm100 standard"], bme680.temperature, bme680.gas, bme680.relative_humidity, bme680.pressure, bme680.altitude]
-
-    writer.writerow(data_out)
+    
+    count = 0    
 
 file.close()
 print("Data collection complete!")
